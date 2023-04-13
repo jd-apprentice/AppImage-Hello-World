@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=hello-world
+Exec=hello
+Icon=image
+Type=Application
+Categories=Utility
