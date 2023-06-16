@@ -30,13 +30,17 @@ make start
 ## Available commands 📜
 
 ```makefile
+## Run the AppImage
+start:
+	cd usr && make start
+
 ## Build the AppImage from the compiled C code
 build:
 	cd usr && make build
 
 ## Compile the C code for development purposes
-build-dev:
-	cd usr && make build-dev
+prepare:
+	cd usr && make prepare
 
 ## Run the C code for development purposes
 run-dev:

@@ -8,8 +8,8 @@ NAME = hello
 build:
 	cd usr && make build
 
-build-dev:
-	cd usr && make build-dev
+prepare:
+	cd usr && make prepare
 
 run-dev:
 	cd usr && make run-dev
