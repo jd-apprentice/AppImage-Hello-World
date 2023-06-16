@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=facts
+Icon=image
+Type=Application
+Categories=Utility
+Terminal=true
+X-AppImage-Version=0.1.0

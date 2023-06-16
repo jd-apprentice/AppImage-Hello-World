@@ -1,4 +1,4 @@
 #!/bin/sh
 
 cd "$(dirname "$0")"
-exec ./bin/main
+python3 ./src/main.py

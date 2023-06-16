@@ -1,17 +1,18 @@
-# AppImage Hello-World 🌍
+# AppImage Hello-World - Example #1 📔
 
-This is a simple example of how to create an AppImage. It is based on this [REPO](https://github.com/ClonedRepos/hello-world-appimage)
+This branch is the same as the master branch, but different types of files are used to build the AppImage.
 
 ## Requirements 🔨
 
 - curl
 - git
 - make
+- python3
 
 ## Clone the repo 📥
 
 ```bash
-git clone git@github.com:jd-apprentice/AppImage-Hello-World.git
+git clone -b example-1 git@github.com:jd-apprentice/AppImage-Hello-World.git
 cd AppImage-Hello-World
 ```
 
@@ -27,30 +28,22 @@ make build
 make start
 ```
 
-## Available commands 📜
+### Build your own AppImage ⭐
 
-```makefile
-## Run the AppImage
-start:
-	cd usr && make start
+1. Now if you want to modify the AppImage, start working inside the `src` folder.
+2. Then when you are finished go back to `Build the AppImage` section.
 
-## Build the AppImage from the compiled C code
-build:
-	cd usr && make build
+#### Notes
 
-## Compile the C code for development purposes
-prepare:
-	cd usr && make prepare
+- Complete the `config.mk` file with your own information.
+- When providing an icon, make sure its in the same folder.
+- Your `AppRun` should be modified to your needs for example here we are running a python script, instead if we were running a nodejs script we would have to change the `AppRun` file to something like this:
 
-## Run the C code for development purposes
-run-dev:
-	cd usr && make run-dev
+```bash
+#!/bin/bash
 
-## Clean the build files in the usr directory
-clean:
-	cd usr && make clean
-
-## Remove the executable from the system
-uninstall:
-	sudo rm -rf /usr/local/bin/$(NAME)
+cd "$(dirname "$0")"
+node ./main.js
 ```
+
+- Becareful about `config.mk` to not leave spaces between the `=` sign or at the end of the line.

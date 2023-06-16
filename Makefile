@@ -1,11 +1,12 @@
-## Description
-## Use the name of the project as the name of the executable
-## This because the unistall target will use the name of the executable
-## With this I mean the `Exec` of your .desktop file
+###############
+# Inside the `usr` folder is another Makefile with detailed instructions about what does each command
+# This is just a wrapper to make it easier to use
+# Built by @jd-apprentice
+###############
 
-NAME = hello
+include config.mk
 
-build:
+build: clean desktop
 	cd usr && make build
 
 prepare:
@@ -17,8 +18,14 @@ run-dev:
 clean:
 	cd usr && make clean
 
-start:
-	cd usr && make start
+copy:
+	cp config.mk usr/config.mk
 
 uninstall:
-	sudo rm -rf /usr/local/bin/$(NAME)
+	sudo rm -rf /usr/local/bin/"$(NAME)"
+
+start: copy
+	cd usr && make start
+
+desktop:
+	echo "[Desktop Entry]\nName=$(NAME)\nIcon=$(ICON)\nType=Application\nCategories=$(CATEGORY)\nTerminal=true\nX-AppImage-Version=$(VERSION)" > ./usr/$(DESKTOP)

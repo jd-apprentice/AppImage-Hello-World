@@ -2,3 +2,4 @@ build
 main
 *.AppImage
 .DirIcon
+__pycache__
