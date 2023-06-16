@@ -1,5 +1,7 @@
 # AppImage Hello-World 🌍
 
+### Check out `example-1` branch for a python3 example
+
 This is a simple example of how to create an AppImage. It is based on this [REPO](https://github.com/ClonedRepos/hello-world-appimage)
 
 ## Requirements 🔨
