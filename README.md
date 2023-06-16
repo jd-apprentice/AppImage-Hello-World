@@ -24,8 +24,7 @@ make build
 ## Run the AppImage 🚀
 
 ```bash
-chmod +x ./hello-world.AppImage
-./hello-world.AppImage
+make start
 ```
 
 ## Available commands 📜
