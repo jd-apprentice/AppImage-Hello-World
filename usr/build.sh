@@ -10,3 +10,6 @@ fi
 
 # the build command itself:
 build/appimagetool-$ARCH.AppImage $PWD
+
+# move result in build folder
+mv hello-world*.AppImage build/

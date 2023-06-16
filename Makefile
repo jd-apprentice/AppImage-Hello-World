@@ -17,5 +17,8 @@ run-dev:
 clean:
 	cd usr && make clean
 
+start:
+	cd usr && make start
+
 uninstall:
 	sudo rm -rf /usr/local/bin/$(NAME)
