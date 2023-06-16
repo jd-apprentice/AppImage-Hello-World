@@ -7,7 +7,6 @@ run-dev:
 prepare:
 	gcc $(ROUTE)/$(FILE).c -o $(ROUTE)/$(FILE)
 
-
 clean:
 	rm -rf build
 
