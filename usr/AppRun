@@ -1,4 +1,14 @@
 #!/bin/sh
 
 cd "$(dirname "$0")"
-python3 ./src/main.py
+
+python3 ./src/main.py 2>/dev/null ||
+(
+    cd ./src && npm run build 2>dev/null && npm run start 2>/dev/null
+) ||
+lua ./src/main.lua 2>/dev/null ||
+sh ./src/main.sh 2>/dev/null ||
+(
+    gcc ./src/main.c -o ./src/main && ./src/main 2>/dev/null
+) ||
+echo "No executable found"

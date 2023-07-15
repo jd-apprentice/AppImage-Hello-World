@@ -1,7 +1,7 @@
 [Desktop Entry]
-Name=facts
+Name=Yoni
 Icon=image
 Type=Application
-Categories=Utility
+Categories=Development
 Terminal=true
 X-AppImage-Version=0.1.0

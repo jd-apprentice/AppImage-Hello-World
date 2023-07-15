@@ -1,12 +1,11 @@
 ###############
 # Inside the `usr` folder is another Makefile with detailed instructions about what does each command
 # This is just a wrapper to make it easier to use
-# Built by @jd-apprentice
 ###############
 
 include config.mk
 
-build: clean desktop
+build: clean copy desktop
 	cd usr && make build
 
 prepare:
@@ -29,3 +28,6 @@ start: copy
 
 desktop:
 	echo "[Desktop Entry]\nName=$(NAME)\nIcon=$(ICON)\nType=Application\nCategories=$(CATEGORY)\nTerminal=true\nX-AppImage-Version=$(VERSION)" > ./usr/$(DESKTOP)
+
+gui:
+	python3 gui.py || python gui.py

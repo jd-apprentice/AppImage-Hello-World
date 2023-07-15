@@ -1,6 +1,10 @@
-# AppImage Hello-World - Example #1 📔
+# AppImage Hello-World - GUI📔
 
 This branch is the same as the master branch, but different types of files are used to build the AppImage.
+
+## How it looks 📸
+
+![IMG](./USAGE.png)
 
 ## Requirements 🔨
 
@@ -8,42 +12,39 @@ This branch is the same as the master branch, but different types of files are u
 - git
 - make
 - python3
+- tkinter
 
 ## Clone the repo 📥
 
 ```bash
-git clone -b example-1 git@github.com:jd-apprentice/AppImage-Hello-World.git
+git clone -b gui git@github.com:jd-apprentice/AppImage-Hello-World.git
 cd AppImage-Hello-World
 ```
+## Run with GUI 🖥
 
-## Build the AppImage 📦
-
-```bash
-make build
-```
-
-## Run the AppImage 🚀
+Requires `python3` and `tkinter` to be installed.
 
 ```bash
-make start
+make gui
 ```
 
-### Build your own AppImage ⭐
+### Ideas 💡
 
-1. Now if you want to modify the AppImage, start working inside the `src` folder.
-2. Then when you are finished go back to `Build the AppImage` section.
+Work in progress, but here are some ideas:
 
-#### Notes
+![IMG](./README.png)
 
-- Complete the `config.mk` file with your own information.
-- When providing an icon, make sure its in the same folder.
-- Your `AppRun` should be modified to your needs for example here we are running a python script, instead if we were running a nodejs script we would have to change the `AppRun` file to something like this:
+#### Notes 📝
 
-```bash
-#!/bin/bash
+- When you are selecting a folder remember to enter inside the folder
+- For the image icon, use only `.png` files or `.jpg` files
+- Supports only C, Python, Node, Lua, Bash
+- Whenever you are copying your app it should be inside a `src` folder and the main executable should be named `main.<extension>`
 
-cd "$(dirname "$0")"
-node ./main.js
-```
+#### TODO - Improvements 📌
 
-- Becareful about `config.mk` to not leave spaces between the `=` sign or at the end of the line.
+- [x] Base idea
+- [ ] Handle errors
+- [ ] Add more languages
+- [ ] Allow to select the language from the gui
+- [ ] AppRun has to detect the main executable and allow any file structure
